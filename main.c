@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	(void)opNFunc;
 	if (argc != 2)
 	{
-		fprintf(stderr, "Usage: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	fp = fopen(argv[1], "r");
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	}
 	while ((read = getline(&lineptr, &len, fp)) != -1)
 	{
-		if (read == 0 || (lineptr[0] == '\n' || lineptr[0] == '\t'))
+		if (read == 0 || isspace(lineptr[0]))
 			continue;
 		if (lineptr[0] == '#')
 			continue;

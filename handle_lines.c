@@ -42,7 +42,7 @@ void handle_opcodes(unsigned int numLines)
 		{NULL, NULL}
 	};
 	int a = 0;
-	static stack_t *stack = NULL;
+	stack_t *stack = NULL;
 
 	while (i[a].opcode != NULL)
 	{
@@ -52,5 +52,10 @@ void handle_opcodes(unsigned int numLines)
 			break;
 		}
 		a++;
+	}
+	if (i[a].opcode == NULL)
+	{
+		fprintf(stderr, "L%u: unknown instruction %s\n", numLines, opNFunc[0]);
+		exit(EXIT_FAILURE);
 	}
 }
