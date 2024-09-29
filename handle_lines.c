@@ -42,7 +42,7 @@ void handle_opcodes(unsigned int numLines)
 		{NULL, NULL}
 	};
 	int a = 0;
-	stack_t *stack = NULL;
+	static stack_t *stack = NULL;
 
 	while (i[a].opcode != NULL)
 	{
